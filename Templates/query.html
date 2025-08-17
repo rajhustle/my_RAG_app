@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RAG Demo – Query</title>
+</head>
+<body>
+    <h1>Ask a Question</h1>
+    <form method="post">
+        <input type="text" name="query" required value="{{ query or '' }}" style="width:400px;">
+        <button type="submit">Ask</button>
+    </form>
+    {% if answer %}
+      <h2>Answer:</h2>
+      <p>{{ answer }}</p>
+    {% endif %}
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <hr>
+    <a href="/">Back to Upload</a>
+</body>
+</html>

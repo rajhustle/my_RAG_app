@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RAG Demo – Upload PDF</title>
+</head>
+<body>
+    <h1>Upload PDF for Embedding</h1>
+    {% if message %}
+      <p style="color:green;">{{ message }}</p>
+    {% endif %}
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form action="/embed" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" required>
+        <button type="submit">Upload & Embed</button>
+    </form>
+    <hr>
+    <a href="/ask">Go to Query Page</a>
+</body>
+</html>
